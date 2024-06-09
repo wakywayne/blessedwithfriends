@@ -64,7 +64,7 @@ Contact Us
   const html2 = `
   <div class="col-10 mx-auto mt-4">
     <div class="row wrap row-wrap">
-      <div class="card col-12 col-md-4 pt-3" style="background-color:#ffff00">
+      <div class="card col-12 col-md-4 pt-3" style="border: 2.5px solid #ffff00">
         <a href="spanish.html">
           <img src="https://picsum.photos/500/500" class="card-img-top" alt="Kids Learning Spanish">
           <div class="card-body">
@@ -76,8 +76,8 @@ Contact Us
           </div>
         </a>
       </div>
-      <div class="card col-12 col-md-4 pt-3" style="background-color:#54ccf8;">
-        <a href="">
+      <div class="card col-12 col-md-4 pt-3" style="border: 2.5px solid #54ccf8;">
+        <a href="montesori.html">
           <img src="https://picsum.photos/500/500" class="card-img-top" alt="School">
           <div class="card-body">
             <h5 class="card-title">Montesori Learning Style</h5>
@@ -86,7 +86,7 @@ Contact Us
           </div>
         </a>
       </div>
-      <div class="card col-12 col-md-4 pt-3 " style="background-color:#ccff99">
+      <div class="card col-12 col-md-4 pt-3 " style="border: 2.5px solid #ccff99">
         <a href="sleep.html">
           <img src="https://picsum.photos/500/500" class="card-img-top" alt="Infant Sleeping">
           <div class="card-body">
