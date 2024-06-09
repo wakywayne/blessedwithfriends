@@ -1,0 +1,59 @@
+.about {
+    @include breakpoint(max-lg) {
+        @include padding-top(80px);
+    }
+    &__content {
+        h5 {
+            color: $theme-color-2;
+        }
+        h2 {}
+        >span {
+            @extend %d-block, %text-700;
+            @include margin-bottom(15px);
+            max-width: 500px;
+        }
+        p {}
+        .lab-btn {
+            @include margin(15px 0 40px);
+        }
+        h3 {
+            @include margin-bottom(15px);
+        }
+        ul {
+            @extend %flex;
+            gap: 10px;
+            li {
+                @extend %d-inline-block;
+                a {
+                    @include padding(10px 25px);
+                    @include border-radius(4px);
+                    @extend %d-inline-block, %text-capitalize;
+                }
+            }
+        }
+    }
+    &--two {
+        .about {
+            &__area {
+                @include padding(40px);
+                @extend %bg-white, %text-center;
+                @include border-radius(4px);
+            }
+            &__thumb {
+                background: $body-bg-color-2;
+                @include padding-top(15px);
+                @include margin-bottom(30px);
+            }
+            &__content {
+                span {
+                    @include margin(0 auto 30px);
+                }
+                p {
+                    max-width: 690px;
+                    @include font-size(18px);
+                    @include margin(0 auto 25px);
+                }
+            }
+        }
+    }
+}

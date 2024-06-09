@@ -1,0 +1,24 @@
+.gallery {
+    background-color: #e1f3fd;
+    &__item {
+        @include padding(10px);
+        @extend %bg-white;
+        @include border-radius(4px);
+        &:hover {
+            .gallery {
+                &__thumb {
+                    img {
+                        @include transform(scale(1.3));
+                    }
+                }
+            }
+        }
+    }
+    &__thumb {
+        @include border-radius(4px);
+        @extend %hidden;
+        img {
+            @extend %w-100;
+        }
+    }
+}

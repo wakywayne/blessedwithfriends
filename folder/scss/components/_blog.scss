@@ -1,0 +1,171 @@
+.blog {
+    &__item {
+        &:hover {
+            .blog {
+                &__thumb {
+                    a {
+                        img {
+                            @include transform(scale(1.2));
+                        }
+                    }
+                }
+                &__content {
+                    &--content {
+                        h5 {
+                            a {
+                                @extend %theme-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__inner {
+        @extend %bg-white, %hidden;
+        @include border-radius(4px);
+        background: transparent;
+    }
+    &__thumb {
+        @extend %d-block, %hidden;
+        a {
+            @extend %d-block;
+            img {
+                @extend %d-block, %w-100;
+                @include transition($transition);
+            }
+        }
+    }
+    &__content {
+        @include padding(30px);
+        @include breakpoint(sm) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: -65px;
+            position: relative;
+            z-index: 9;
+            padding: 0;
+        }
+        &--content {
+            @include breakpoint(sm) {
+                background-color: $white-color;
+                width: calc(100% - 110px);
+                @include padding(30px);
+            }
+            h5 {
+                @include margin-bottom(5px);
+                a {
+                    @include transition($transition);
+                    @extend %title-color, %text-2;
+                }
+            }
+            .lab-btn {
+                @include padding(10px 25px);
+                @include margin-top(5px);
+                box-shadow: 0px 3px 4px rgba(0, 25, 67, 0.1);
+            }
+        }
+    }
+    &__meta {
+        @include breakpoint(max-sm) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        @include breakpoint(sm) {
+            text-align: right;
+            width: 110px;
+            @include padding-right(10px);
+        }
+        &--icon {
+            font-size: 1.5em;
+            line-height: 50px;
+            height: 50px;
+            width: 50px;
+            @extend %theme-color, %text-center;
+            @include breakpoint(sm) {
+                margin: 15px 0 20px 60px;
+                color: $white-color;
+                background: $theme-color;
+            }
+            @include breakpoint(max-sm) {
+                display: none;
+            }
+            i {
+                @include margin-top(15px);
+            }
+        }
+        a.date, a.name, a.comments {
+            line-height: 24px;
+            @extend %d-block, %desc-color;
+            @include transition($transition);
+            @include breakpoint(max-sm) {
+                margin: 0 10px 0 0;
+            }
+            &:hover {
+                color: $theme-color-2;
+            }
+        }
+    }
+    &--single {
+        .blog {
+            &__thumb {
+                height: 450px;
+                img {
+                    @extend %w-100, %h-100;
+                    object-fit: cover;
+                }
+            }
+            &__content {
+                @extend %d-block, %bg-white;
+                @include padding(30px);
+                h2 {}
+            }
+            &__date {
+                @include margin-bottom(15px);
+                .date, .admin, .comentss {
+                    @include margin-right(15px);
+                    i {
+                        @include margin-right(5px);
+                    }
+                }
+                .comentss {
+                    @include margin-right(0px);
+                }
+            }
+            &__tags {
+                @include padding-top(30px);
+                @include margin-top(30px);
+                @extend %flex, %justify-between;
+                border-top: 1px solid rgba(0, 25, 67, 0.1);
+                ul {
+                    @extend %d-flex;
+                    gap: 10px;
+                    li {
+                        @extend %d-inline-block;
+                        a {
+                            @include padding(6px 15px);
+                            @include border-radius(4px);
+                            @extend %d-inline-block, %text-capitalize;
+                            border: 1px solid rgba(0, 25, 67, 0.1);
+                            &:hover {
+                                @extend %theme-color;
+                                border-color: $theme-color;
+                            }
+                        }
+                    }
+                }
+                &--scocialshare {
+                    ul {
+                        li {
+                            a {
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

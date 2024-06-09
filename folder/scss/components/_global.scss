@@ -1,0 +1,597 @@
+//Global Form select style.
+
+//Custom Container
+@include breakpoint(xl) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1320px !important;
+    }
+}
+
+
+//Custom Cursor Effect
+body #magicMouseCursor {
+	border-color: $theme-color;
+}
+
+.form-select {
+	background-image: none;
+	color: $text-color;
+}
+
+.form-control {
+	@extend %bg-white;
+	padding-inline: 1.5rem;
+
+	&::placeholder {
+		color: $text-color;
+		opacity: .7;
+	}
+
+	&:focus {
+		box-shadow: none;
+		border-color: $theme-color;
+	}
+
+	&.date-input {
+		@extend %c-pointer;
+		background-color: $white-color;
+	}
+
+	&.textarea {
+		min-height: 160px;
+		padding-block: 1rem;
+	}
+
+	&:not(textarea) {
+		height: 56px;
+	}
+
+}
+
+.form-check-input {
+
+
+	&:checked {
+		background-color: $theme-color;
+		border-color: $theme-color;
+	}
+
+	&:focus {
+		border-color: rgba($theme-color, $alpha: .7);
+		box-shadow: 0 0 0 .25rem rgba($theme-color, $alpha:.30);
+	}
+}
+
+.form-label {
+	color: $title-color;
+	font-weight: 600;
+}
+
+
+//default breadcrumb style
+.breadcrumb {
+	&-item {
+		@extend %text-semibold;
+
+		a {
+			color: $white-color;
+		}
+
+		&.active {
+			color: $theme-color;
+		}
+	}
+}
+
+// pagination
+.pagination {
+    li {
+        .page-link {
+            @extend %p-0;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            outline: none;
+            background-color: $white-color;
+            @extend %text-center, %m-5, %title-color, %text-700;
+            @include border-radius(100%);
+            &:focus {
+                box-shadow: none;
+            }
+            &:hover {
+                @extend %white-color;
+                background-color: $theme-color;
+            }
+        }
+        &:first-child .page-link, &:last-child .page-link {
+            @include border-radius(100%);
+        }
+    }
+}
+
+
+
+// cart-plus-minus start here
+.cart-plus-minus {
+	border: 1px solid $border-color;
+    width: 125px;
+    margin: 0 auto;
+    @extend %rel;
+    @extend %hidden;
+	.dec.qtybutton {
+		border-right: 1px solid $border-color;
+	    height: 40px;
+	    left: 0;
+	    top: 0;
+	}
+	.cart-plus-minus-box {
+	    border: medium none;
+	    color: $title-color;
+	    float: left;
+	    font-size: 14px;
+	    height: 38px;
+	    margin: 0;
+	    text-align: center;
+	    width: 125px;
+	    outline: none;
+	}
+	.qtybutton {
+		color: $title-color;
+	    float: inherit;
+	    font-size: 14px;
+	    font-weight: 500;
+	    line-height: 40px;
+	    margin: 0;
+	    text-align: center;
+	    width: 40px;
+        @extend %abs;
+        @extend %pointer;
+	    @include transition($transition);
+	    &:hover {
+	    	background: $theme-color;
+	    	color: $white-color;
+	    }
+	}
+	.inc.qtybutton {
+	    border-left: 1px solid $border-color;
+	    height: 40px;
+	    right: 0;
+	    top: 0;
+	}
+}
+
+
+// map
+.map {
+    height: 350px;
+    iframe {
+        @extend %w-100, %h-100, %border-none;
+    }
+}
+
+
+
+// tag section start here
+.tags-section {
+    @extend %flex;
+    @extend %justify-between;
+    @extend %align-items-center;
+    padding: 15px 30px;
+    border: 1px solid $border-color;
+    border-top: none;
+    gap: 15px;
+	@include border-radius(0 0 10px 10px);
+    .tags {
+        @extend %p-0;
+        @extend %m-0;
+        @extend %flex;
+        @extend %align-items-center;
+
+        li {
+            @extend %list-none;
+            padding: 5px 0;
+
+            span {
+                padding: 10px 15px;
+                color: $white-color;
+                @extend %bg-theme;
+                @extend %rel;
+                @extend %mr-20;
+
+                &::after {
+                    @extend %abs;
+                    @extend %bg-theme;
+                    top: 50%;
+                    right: 0;
+                    transform: rotate(45deg) translateY(-50%);
+                    width: 15px;
+                    height: 15px;
+                }
+
+                i {
+                    @extend %d-inline-block;
+                }
+            }
+
+            a {
+                @extend %d-inline-block, %text-capitalize;
+                outline: none;
+                margin: 0 3px;
+                border: 1px solid $border-color;
+                color: $title-color;
+                font-size: $fs-small;
+                font-weight: 600;
+                text-decoration: none;
+                @include transition($transition);
+                border-radius: 3px;
+				padding: 8px 20px;
+                &:hover {
+                    @extend %bg-theme;
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    .social-link-list {
+        @extend %mt-0;
+        li {
+            padding: 5px 0;
+            @extend %mr-10;
+
+            &:last-child {
+                @extend %mr-0;
+            }
+
+            a {
+                background-color: $theme-color;
+                height: 40px;
+                width: 40px;
+                @extend %d-inline-block, %white-color, %text-center, %border-radius-2;
+                line-height: 40px;
+            }
+        }
+    }
+}
+
+
+
+
+//date picker default theme color 
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-day.selected.prevMonthDay,
+.flatpickr-day.startRange.prevMonthDay,
+.flatpickr-day.endRange.prevMonthDay,
+.flatpickr-day.selected.nextMonthDay,
+.flatpickr-day.startRange.nextMonthDay,
+.flatpickr-day.endRange.nextMonthDay {
+	background: $theme-color;
+	border-color: $theme-color;
+	color: $title-color;
+}
+
+.padding-tb {
+	padding-block: 80px;
+
+	@include breakpoint(lg) {
+		padding-block: 120px;
+	}
+}
+.theme-color2 {
+	color: $theme-color-2;
+}
+.theme-color3 {
+	color: $theme-color-3;
+}
+
+// section
+.section__header {
+    max-width: 800px;
+	@extend %text-center;
+	@include margin(0 auto 50px);
+    h2 {}
+    p {
+		@include font-size(18px);
+    }
+}
+
+// pagination
+.pagination {
+    li {
+        .page-link {
+            @extend %p-0;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            outline: none;
+            background-color: $white-color;
+            @extend %text-center, %m-5, %title-color, %text-700;
+            @include border-radius(100%);
+            &:focus {
+                box-shadow: none;
+            }
+            &:hover, &.active {
+                @extend %white-color;
+				border-color: $theme-color;
+                background-color: $theme-color;
+            }
+        }
+        &:first-child .page-link, &:last-child .page-link {
+            @include border-radius(100%);
+        }
+    }
+}
+
+
+//common filter button
+.common-filter {
+	@extend %flex,
+	%align-i-center;
+	gap: 20px;
+
+	&__btn {
+		@extend %d-inline-grid,
+		%place-i-center,
+		%text-semibold,
+		%text-uppercase;
+		@include add-prefix(transition, $transition);
+		background-color: $section-bg-color;
+		border: 0;
+		border-radius: .25rem;
+		padding: .65rem 1.25rem;
+
+		&:hover,
+		&.active {
+			background-color: $theme-color;
+		}
+	}
+}
+
+.bg-theme2 {
+	background: $theme-color-2;
+}
+
+.bg-theme3 {
+	background: $theme-color-3;
+}
+.section-bg {
+	background: $section-bg-color;
+}
+
+// scrollTop
+.scrollToTop {
+	position: fixed;
+	bottom: -30%;
+	right: 5%;
+	z-index: 99;
+	@extend %d-inline-block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 5px;
+	@extend %text-center;
+	color: $white-color;
+	background: $theme-color;
+
+	@include add-prefix(transition, $transition);
+
+	i,
+	svg {
+		color: $white-color;
+	}
+
+	&:hover {
+		transform: translateY(-5px);
+		box-shadow: 0px 5px 20px 0px rgba($theme-color, $alpha: .50);
+	}
+}
+
+
+.lab-btn {
+	padding: 16px 30px;
+	font-size: 16px;
+	border: 0;
+	font-family: $title-font;
+	color: $white-color !important;
+	@include border-radius(4px);
+	@extend %text-capitalize,
+	%text-700,
+	%bg-theme,
+	%d-inline-block;
+	@include transition(all .3s ease);
+
+	i {
+		@extend %ml-10;
+	}
+
+	&:hover {
+		@extend %white-color;
+		background: $theme-color-2;
+	}
+
+	&.bg-transparate {
+		background-color: transparent;
+		border: 1px solid rgba($white-color, $alpha: .50);
+
+	}
+
+	&.bg-title {
+		background: $title-color;
+		&:hover {
+			@extend %bg-theme,
+			%white-color;
+		}
+	}
+}
+
+.lab_btn_group {
+	.lab-btn {
+		@extend %mr-15,
+		%mb-15;
+
+		@include breakpoint(sm) {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+
+input, textarea, select {
+	@extend %w-100;
+	outline: none;
+	border: 1px solid #EFEFEF;
+  	background: $white-color;
+	padding: 15px !important;
+	@include border-radius(4px);
+	&::placeholder {
+		@extend %text-capitalize;
+	}
+}
+img {
+	@include transition($transition);
+}
+
+// filters-button-group
+.filters-button-group {
+    @extend %mb-30;
+    .filter-btn {
+        @extend %bg-white, %title-color, %m-5, %text-capitalize, %text-700, %pointer;
+        padding: 12px 30px;
+        @include transition($transition);
+		@include border-radius(4px);
+        &.is-checked {
+            @extend %bg-theme, %white-color;
+        }
+    }
+}
+
+.bg_img {
+	background-position: center !important;
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+}
+
+
+ul {
+	li {
+		a {
+			&.facebook {
+				background: $facebook !important;
+				color: $white-color !important;
+			}
+			&.instagram {
+				background: $instagram !important;
+				color: $white-color !important;
+			}
+			&.linkedin {
+				background: $linkedin !important;
+				color: $white-color !important;
+			}
+			&.twitter {
+				background: $twitter !important;
+				color: $white-color !important;
+			}
+			&.youtube {
+				background: $youtube !important;
+				color: $white-color !important;
+			}
+		}
+	}
+}
+
+
+
+.progressbararea {
+    max-width: 100%;
+    li {
+        .title {
+            @extend %flex, %justify-between;
+            p {
+                @extend %text-capitalize, %title-color, %text-700;
+                span {
+                    @extend %theme-color;
+                }
+            }
+        }
+        .progress {
+            height: 6px;
+            @extend %bg-title;
+            .progress-bar {
+                height: 4px;
+                @extend %bg-theme;
+            }
+        }
+		&:nth-child(2) {
+			.progress {
+				.progress-bar {
+					background: $theme-color-2;
+				}
+			}
+			.title {
+				p {
+					span {
+						color:  $theme-color-2;;
+					}
+				}
+			}
+		}
+		&:nth-child(3) {
+			.progress {
+				.progress-bar {
+					background: $theme-color-3;
+				}
+			}
+			.title {
+				p {
+					span {
+						color:  $theme-color-3;
+					}
+				}
+			}
+		}
+    }
+}
+
+.mb-none-120 {
+    margin-bottom: -120px;
+}
+.mt-none-42 {
+	margin-top: -42px;
+}
+
+
+@include breakpoint(max-lg) {
+    .wow{
+        animation-name: none !important;
+        visibility: visible !important;
+    }
+}
+
+.error {
+	&__wrapper {
+		@include padding(30px);
+		@extend %bg-white;
+		@include border-radius(4px);
+	}
+	&__thumb {
+		@include margin-bottom(30px);
+	}
+	&__content {}
+}

@@ -1,0 +1,106 @@
+.comments-area {
+    @include margin-top(30px);
+    .comments-title {
+        @include font-size(24px);
+        @include padding(15px 30px);
+        @extend %bg-white, %mb-0;
+        border-radius: (4px 4px 0 0);
+        border-bottom: 1px solid rgba($title-color, $alpha: .1);
+    }
+    .comment-list {
+        @extend %ml-0, %bg-white;
+        border-radius: (0 0 4px 4px);
+        .comment {
+            &:last-child {
+                .comment {
+                    &-body {
+                        border-bottom: none;
+                    }
+                }
+            }
+            &-body {
+                @include padding(30px);
+                border-bottom: 1px solid rgba($title-color, $alpha: .1);
+            }
+            &-meta {}
+            &-content {
+                @include margin-bottom(20px);
+            }
+            &-author {
+                @include margin-bottom(8px);
+                img {
+                    width: 60px;
+                    @include margin-right(10px);
+                    @include border-radius(100px);
+                }
+                a {
+                    @extend %title-color;
+                    &:hover {
+                        @extend %theme-color;
+                    }
+                }
+                span {
+                    @extend %d-none;
+                }
+            }
+            &-metadata {
+                @include margin-bottom(10px);
+                a {
+                    @extend %title-color;
+                }
+                .edit-link {
+                    a {
+                        @extend %theme-color, %text-700;
+                    }
+                }
+            }
+            .reply {
+                a {
+                    border: 1px solid $title-color;
+                    @extend %d-inline-block, %text-700;
+                    @include padding(5px 30px);
+                    @include border-radius(4px);
+                    &:hover {
+                        border-color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+    .comment-respond {
+        @include padding(30px);
+        @extend %bg-white, %mt-30;
+        border-radius: 4px;
+        .comment-reply-title {
+            @include font-size(24px);
+        }
+        .comment-form-comment {
+            
+        }
+        p {
+            label {
+                @include margin-bottom(15px);
+            }
+            input {
+                @include padding(10px 20px);
+            }
+        }
+        .comment-form-cookies-consent {
+            input {
+                width: auto;
+                @include margin-right(5px);
+            }
+            label {
+                @include margin-bottom(0);
+            }
+        }
+        .form-submit {
+            input#submit {
+                width: auto;
+                @extend %bg-theme, %white-color, %border-none;
+                @include padding(15px 30px);
+                @include border-radius(4px);
+            }
+        }
+    }
+}

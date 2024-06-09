@@ -1,0 +1,168 @@
+/*================*** Header Section Start Here     ***===================*/
+.header {
+    &--fixed {
+        .header {
+            &__bottom {
+                @include breakpoint(lg) {
+                    position: fixed;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    animation: fadeInDown .5s;
+                    -webkit-animation: fadeInDown .5s;
+                    -moz-animation: fadeInDown .5s;
+                    box-shadow: 0 0 10px rgba($color:$title-color, $alpha:.1);
+                    border-bottom: 1px solid $border-color;
+                    z-index: 99;
+                }
+                // @include breakpoint(xl) {
+                //     top: -50px;
+                // }
+            }
+        }
+    }
+    &__top {
+        @extend %bg-theme, %d-none;
+        &.infoBar {
+            display: block;
+            @include breakpoint(lg) {
+                display: none;
+            }
+        }
+        @include breakpoint(lg) {
+            display: block;
+        }
+        &--left {
+            @include margin-top(10px);
+            @include breakpoint(xl) {
+                @include margin-top(0);
+            }
+        }
+        &--right {
+            ul {
+                @include margin(10px 0);
+                @include breakpoint(xl) {
+                    @include margin(0);
+                    justify-content: flex-end;
+                }
+                li {
+                    &:last-child {
+                        border-right: 1px solid rgba($white-color, $alpha: .1);
+                    }
+                    span {
+                        @extend %text-capitalize, %ml-5;
+                    }
+                }
+            }
+        }
+        ul {
+            @extend %d-flex, %m-0, %justify-center;
+            flex-wrap: wrap;
+            gap: 5px;
+            @include breakpoint(xl) {
+                gap: 0;
+            }
+            li {
+                @extend %d-inline-block, %white-color;
+                @include padding(13px);
+                border: 1px solid rgba($white-color, $alpha: .1);
+                @include breakpoint(xl) {
+                    border-left: none;
+                    border-top: none;
+                    border-bottom: none;
+                }
+                a {
+                    color: $white-color !important;
+                }
+            }
+        }
+    }
+    &__bottom {
+        @include padding(15px 0);
+        @extend %bg-white;
+        &--area {
+            @extend %d-flex, %align-items-center;
+            justify-content: space-between;
+        }
+        &.activeMenu {
+            .header__bottom--area {
+                @extend %rel;
+            }
+            .header__menus {
+                display: block;
+                position: absolute;
+                top: calc(100% + 15px);
+                z-index: 111;
+                width: 100%;
+                left: 0;
+                background: #fff;
+                padding: 0 30px;
+                border-top: 1px solid rgba(0, 0, 0, .1);
+                ul {
+                    display: block;
+                    @include padding(15px 0 30px);
+                    li {
+                        a {
+                            @extend %d-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__logo {}
+    &__menus {
+        @include breakpoint(max-lg) {
+            display: none;
+            .main-menu {
+                li {
+                    a {}
+                }
+            }
+        }
+        .main-menu {
+            @extend %m-0, %d-flex;
+            li {
+                &.active {
+                    a {
+                        @extend %theme-color;
+                    }
+                }
+                a {
+                    @include padding(10px 20px);
+                    @extend %d-inline-block, %text-700;
+                }
+            }
+        }
+    }
+    &__btn {
+        @include breakpoint(max-lg) {
+            display: none;
+        }
+    }
+    &__bar {
+        @include breakpoint(lg) {
+            display: none;
+        }
+        &--area {
+            @extend %flex, %align-items-center;
+            gap: 15px;
+        }
+        &--nav {
+            @extend %c-pointer;
+            i {
+                @include font-size(24px);
+            }
+        }
+        &--info {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            @include border-radius(100%);
+            @extend %bg-theme, %white-color, %c-pointer, %text-center;
+            i {
+                margin-top: 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,239 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+/* @@@@@@@@@@@@@  Footer Section Start Here  @@@@@@@@@@@@@@ */
+footer {
+    .pattan-shape {
+        left: 0;
+    }
+}
+.footer-top-area {
+    @extend %hidden;
+    background: $white-color;
+    z-index: 11;
+    max-width: 1520px;
+    margin: 0 auto;
+    @extend %rel;
+    .ft-top-abs-area {
+        @include breakpoint(xl) {
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+        }
+    }
+    .footer-top { 
+        .ft-bottom {
+            z-index: 1;
+            @extend %rel;
+            padding: 70px 0 0;
+            @include breakpoint(xl) {
+                padding: 180px 0 70px;
+
+            }
+            .ft-title {
+                margin-bottom: 15px;
+                h4 {
+                    margin-bottom: 0;
+                }
+            }
+            .ft-body {
+                p {
+                    @include breakpoint(lg) {
+                        @include breakpoint(max-xl) {
+                            max-width: 370px;
+                        }
+                    }
+                }
+                .lab-ul {
+                    li {
+                        padding: 5px 0;
+                    }
+                }
+                .lab-btn {
+                    margin-top: 10px;
+                }
+            }
+            .ft-opening-part {
+                margin-bottom: 30px;
+                @include breakpoint(xl) {
+                    padding: 0 30px;
+                    margin-bottom: 0;
+                }
+                .lab-ul {
+                    li {
+                        @extend %flex;
+                        justify-content: space-between;
+                        padding: 10px 0;
+                        border-bottom: 1px dashed #ebebeb;
+                        @include breakpoint(xl) {
+                            padding: 10px 30px;
+                            margin: 0 -30px;
+                        }
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                        span {
+                            display: inline-block;
+                        }
+                        &.close {
+                            span {
+                                color: red;
+                            }
+                        }
+                    }
+                }
+            }
+            .ft-map-area {
+                @extend %rel;
+                .ft-map {
+                    iframe {
+                        width: 100%;
+                        height: 500px;
+                    }
+                    @include breakpoint(xl) {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: -180px;
+                        left: 0;
+                        iframe {
+                            width: 580px;
+                            height: 600px;
+                        }
+                    }
+                }
+            }
+            .ft-about-part {
+                @extend %rel;
+                margin-bottom: 30px;
+                @include breakpoint(xl) {
+                    margin-bottom: 0;
+                }
+                .bg-asb-thumb {
+                    @include breakpoint(xl) {
+                        position: absolute;
+                        top: -180px;
+                        width: 580px;
+                        right: 0;
+                        z-index: -1;
+                        background: url(../../assets/images/footer/bg-images/01.jpg) no-repeat;
+                        background-position: bottom right;
+                        background-size: cover;
+                        height: 600px;
+                    }
+                }
+            }
+        }
+    }
+    .footer-bottom {
+        @extend %hidden;
+        .section-wrapper {
+            justify-content: center;
+            align-items: center;
+            padding: 30px 0;
+            @extend %flex;
+            @include breakpoint(sm) {
+                padding: 20px 0;
+            }
+            .left , .right {
+                width : 100%;
+            }
+            .left {
+                text-align: center;
+                margin-bottom: 15px;
+                @include breakpoint(xl) {
+                    width: 33.33%;
+                    text-align: left;
+                    margin-bottom: 0;
+                }
+            }
+            .right {
+                @extend %flex, %justify-center;
+                gap: 10px;
+                @include breakpoint(xl) {
+                    width: 66.66%;
+                    justify-content: flex-end;
+                }
+                li {
+                    @extend %d-inline-block;
+                    a {
+                        @extend %text-capitalize, %d-inline-block, %text-center, %white-color;
+                        @include padding(10px 20px);
+                        @include border-radius(4px);
+                        @include transition($transition);
+                        &:hover {
+                            color: $theme-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ft top css
+.ft-top {
+    z-index: 1;
+    justify-content: center;
+    @extend %rel;
+    @extend %flex;
+    .ft-item  {
+        align-items: center;
+        background: #7dcd00;
+        width: 100%;
+        padding: 30px;
+        @extend %flex;
+        @include breakpoint(lg) {
+            width: calc(100% / 2);
+        }
+        @include breakpoint(xl) {
+            width: calc(100% / 3);
+        }
+        .ft-thumb {
+            width: 45px;
+        }
+        .ft-content {
+            padding-left: 20px;
+            width: calc(100% - 45px);
+            p {
+                margin-bottom: 5px;
+            }
+            h6, p {
+                color: $white-color ;
+            }
+            h6 {
+                font-weight: 500;
+                margin-bottom: 0;
+                text-transform: lowercase;
+            }
+        }
+        &:nth-child(2) {
+            background: #00baff;
+        }
+        &:nth-child(3) {
+            background: #9160ff;
+        }
+    }
+}
+.copy-right-part {
+    padding: 40px 0;
+    @include breakpoint(max-lg) {
+        background: $white-color;
+    }
+    p {
+        text-align: center;
+        margin-bottom: 0;
+        z-index: 1;
+        @extend %rel;
+        a {
+            padding: 0 5px;
+            font-style: italic;
+            &:last-child {
+                @include breakpoint(xl) {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}

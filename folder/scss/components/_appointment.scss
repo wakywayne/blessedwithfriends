@@ -1,0 +1,68 @@
+.appointment {
+    &__area {
+        @include margin-top(-30px);
+        @extend %rel;
+        z-index: 1;
+    }
+    &__left {
+        @include padding(50px 30px);
+        @extend %bg-white, %h-100;
+        h2 {
+            color: $theme-color-2;
+        }
+        p {
+            max-width: 400px;
+            @include font-size(18px);
+            @include margin-bottom(30px);
+        }
+        iframe {
+            height: 224px;
+            @extend %w-100;
+        }
+    }
+    &__right {
+        @include padding(50px 30px);
+        @extend %bg-theme;
+        h2 {
+            @extend %white-color;
+            @include margin-bottom(15px);
+        }
+        &--form {
+            label {
+                @include margin-bottom(5px);
+                @extend %white-color;
+            }
+            p {
+                @include margin-bottom(0);
+            }
+            input, select {
+                background-color: $white-color;
+                @extend %border-none;
+                color-scheme: $title-color;
+                color: $title-color !important;
+                &::placeholder {
+                    color: $title-color;
+                }
+            }
+            input {
+                @include padding(18px 15px !important);
+            }
+            button {
+                @extend %w-100, %bg-white, %border-none, %title-color, %text-700;
+                @include padding(18px 15px);
+                @include border-radius(4px);
+                @include margin-top(29px);
+            }
+            .wpcf7-not-valid-tip {
+                color: red;
+                @include margin-top(5px);
+            }
+            .wpcf7-response-output {
+                @include margin(15px 0 0 0 !important);
+                @include padding(0 !important);
+                color: red;
+                border: none !important;
+            }
+        }
+    }
+}

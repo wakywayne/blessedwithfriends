@@ -1,0 +1,102 @@
+.banner {
+    @include padding(150px 0);
+    @extend %rel, %hidden;
+    @include breakpoint(md) {
+        @include breakpoint(max-xl) {
+            overflow: hidden;
+        }
+    }
+    &__author {
+        @extend %abs;
+        @include breakpoint(max-md) {
+            @include transform(translateY(375px));
+        }
+        @include breakpoint(md) {
+            @include breakpoint(max-xl) {
+                left: 50%;
+                bottom: 0;
+                width: 50%;
+                // @include transform(translate(-50% -70%));
+            }
+        }
+        @include breakpoint(xl) {
+            top: 50%;
+            left: 50%;
+            transform: (translate(-50%, -50%));
+        }
+        &--bgimg {
+            img {
+                animation: lab_round 25s linear infinite;
+            }
+        }
+        &--mainimg {
+            @extend %abs;
+            // z-index: 1;
+            bottom: 0;
+            @include breakpoint(lg) {
+                bottom: -56px;
+            }
+            img {
+                @include breakpoint(md) {
+                    @include breakpoint(max-xl) {
+                        // max-width: 177% !important;
+                        // transform: translateY(88px);
+                    }
+                }
+            }
+        }
+    }
+    &__content {
+        z-index: 1;
+        max-width: 540px;
+        margin-bottom: 400px;
+        @include breakpoint(md) {
+            margin-bottom: 0;
+        }
+        @extend %rel;
+        h3 {
+            color: $theme-color-2;
+            @include font-size(60px);
+        }
+        h2 {
+            @include font-size(72px);
+            line-height: 1;
+            @include margin-bottom(10px);
+        }
+        p {
+            max-width: 350px;
+            @extend %text-500;
+            @include font-size(24px);
+            @include margin-bottom(30px);
+        }
+    }
+    &__shape {
+        @extend %text-right;
+        @include breakpoint(max-xl) {
+            display: none;
+        }
+        ul {
+            li {
+                &:nth-child(1) {
+                    animation: lab_zoomin 6s linear infinite;
+                }
+                &:nth-child(2) {
+                    animation: lab_run_top_y 5s linear infinite;
+                }
+                &:nth-child(3) {
+                    animation: lab_run_x 7s linear infinite;
+                }
+            }
+        }
+        &--item {
+            @extend %flex, %align-items-center;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
+            @include padding(20px 0);
+        }
+        &--thumb {
+            @include margin-right(10px);
+        }
+        &--content {}
+    }
+}

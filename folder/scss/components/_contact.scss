@@ -1,0 +1,91 @@
+
+/*@@@@@@@@@@@@@@   Contact Us Page Start Here  @@@@@@@@@@@@@@@@@*/
+.contact {
+    &__wrap {
+        @include padding(30px);
+        @include border-radius(4px);
+        @extend %bg-white;
+		box-shadow: 0 0 10px rgba(136, 136, 136, .10);
+    }
+    &__title {
+        h4 {
+            @extend %text-600;
+        }
+    }
+    &__area {
+        @include margin(0 0 30px);
+        @include breakpoint(md) {
+            @include margin(0);
+        }
+    }
+    &__item {
+        @extend %flex;
+        border-bottom: 1px solid $border-color;
+        @include padding(30px 0);
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    &__icon {
+        width: 45px;
+        @extend %text-center;
+    }
+    &__content {
+        width: calc(100% - 45px);
+        @include padding-left(15px);
+        h5 {
+            @include font-size(20px);
+            @include margin-bottom(5px !important);
+        }
+        h6 {
+            text-transform: lowercase;
+            @include breakpoint(max-sm) {
+                @include font-size(15px);
+            }
+        }
+        pre {
+            @include padding(0);
+            @extend %text-600;
+            background-color: transparent;
+        }
+    }
+    &__form {
+        input {
+            padding: 15px;
+            border: 1px solid $border-color;
+            // margin-bottom: 20px;
+            outline: none;
+            box-shadow: none;
+            @extend %w-100;
+        }
+        textarea {
+            padding: 15px;
+            border: 1px solid $border-color;
+            // margin-bottom: 20px;
+            outline: none;
+            box-shadow: none;
+        }
+        .lab-btn {
+            color: $white-color;
+            text-transform: capitalize;
+			cursor: pointer;
+			margin-bottom: 0;
+			outline: none;
+			border: none;
+			box-shadow: none;
+            &:hover {
+                @include transform(translateY(-5px));
+            }
+        }
+    }
+}
+
+.form-message {
+    @extend %mb-0;
+    &.error {
+        color: red;
+    }
+    &.success {
+        color: green;
+    }
+}

@@ -1,0 +1,26 @@
+.video {
+    &__item {
+        &:hover {
+            .video {
+                &__thumb {
+                    img {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+    &__thumb {
+        @extend %rel, %hidden;
+        @include border-radius(4px);
+        img {}
+    }
+    &__link {
+        @extend %abs, %center;
+        a {
+            color: $youtube;
+            @extend %d-inline-block;
+            @include font-size(64px);
+        }
+    }
+}

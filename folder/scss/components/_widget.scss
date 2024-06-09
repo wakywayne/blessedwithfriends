@@ -1,0 +1,184 @@
+// widget css start here
+.widget {
+    @include padding(30px);
+    @extend %bg-white;
+    @include border-radius(4px);
+    @include margin-bottom(30px);
+    &-title {
+        @include font-size(24px);
+        @include margin-bottom(15px);
+    }
+    &_search {
+        .search-form {
+            @extend %flex;
+            gap: 15px;
+            @include breakpoint(sm) {
+                flex-wrap: nowrap;
+            }
+        }
+        label {
+            @include margin-bottom(15px);
+            @extend %text-700;
+            @include font-size(24px);
+        }
+        .wp-block-search__button {
+            @extend %bg-theme, %white-color, %text-700;
+            border-color: $theme-color;
+            @include border-radius(4px);
+        }
+    }
+    .wp-block-heading {
+        @include font-size(24px);
+    }
+    ul {
+        @include margin(0);
+        li {
+            &:last-child {
+                a {
+                    border-bottom: none;
+                }
+            }
+            a {
+                @extend %d-block;
+                @include padding(5px 0);
+                @include margin(5px 0);
+                border-bottom: 1px solid rgba($title-color, $alpha: .1);
+            }
+        }
+    }
+    &--service {
+        h5 {
+            @include margin-bottom(20px);
+        }
+        ul {
+            li {
+                &:last-child {
+                    a {
+                        border-bottom: 1px dashed rgba($title-color, $alpha: .1);
+                    }
+                }
+                a {
+                    @include padding(10px 30px);
+                    border: 1px dashed rgba($title-color, $alpha: .1);
+                    &:hover {
+                        @extend %bg-theme, %white-color;
+                    }
+                }
+            }
+        }
+    }
+    &--opening {
+        .ft-opening-part {
+            ul {
+                li {
+                    @extend %flex;
+                    justify-content: space-between;
+                    padding: 10px 0;
+                    border-bottom: 1px dashed #ebebeb;
+                    @include breakpoint(xl) {
+                        padding: 10px 30px;
+                        margin: 0 -30px;
+                    }
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                    span {
+                        display: inline-block;
+                    }
+                    &.close {
+                        span {
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &--contact {
+        h5 {
+            @include margin-bottom(20px);
+        }
+        .ft-top {
+            flex-wrap: wrap;
+            .ft-item {
+                @extend %w-100;
+                .ft-thumb {
+                    width: 40px;
+                }
+                .ft-content {
+                    width: calc(100% - 40px);
+                }
+            }
+        }    
+    }
+    &_calendar {
+        .wp-calendar-table {
+            @extend %w-100;
+            tr {
+                @extend %text-center;
+            }
+            td, th {
+                @include padding(10px);
+                border: 1px solid $border-color;
+            }
+            td#today {
+                color: $theme-color;
+                @extend %text-700;
+            }
+        }
+    }
+    &_recentpost {
+        ul {
+            li {
+                @extend %flex;
+                @include padding(25px 0);
+                border-bottom: 1px solid $border-color;
+                &:first-child {
+                    @include padding-top(10px);
+                }
+                &:last-child {
+                    border-bottom: none;
+                    @include padding-bottom(0);
+                }
+                &:hover {
+                    .thumb {
+                        img {
+                            @include transform(scale(1.2));
+                        }
+                    }
+                    .content {
+                        h6 {
+                            a {
+                                @extend %theme-color;
+                            }
+                        }
+                    }
+                }
+                a {
+                    @include padding(0);
+                    @include margin(0);
+                    @extend %border-none, %d-inline-block;
+                }
+                .thumb {
+                    width: 80px;
+                    @include border-radius(4px);
+                    @extend %hidden;
+                }
+                .content {
+                    width: calc(100% - 80px);
+                    @include padding-left(15px);
+                    h6 {
+                        @extend %border-none;
+                        @include font-size(18px);
+                        @include margin-bottom(0px);
+                        a {
+                            @include padding(0);
+                            @include margin(0);
+                            @extend %border-none, %d-inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

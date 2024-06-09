@@ -1,0 +1,92 @@
+/* @@@@@@@@@@@@@  Testimonial Section Start Here  @@@@@@@@@@@@@@ */
+.testimonial {
+	.section-wrapper {
+		.testimonial-slider {
+			@extend %hidden;
+		}
+		.testimonial-item {
+			.testimonial-inner {
+				text-align: center;
+				padding: 60px 15px;
+				@extend %rel;
+				@include breakpoint(lg) {
+					@include breakpoint(max-xl) {
+						padding: 40px 80px 80px;
+					}
+				}
+				@include breakpoint(xl) {
+					padding: 100px 100px 130px;
+				}
+				&::after, &::before {
+					@extend %abs;
+					width: 130px;
+					height: 100%;
+					top: 0;
+					background-repeat: no-repeat !important;
+					@include breakpoint(max-lg) {
+						display: none;
+					}
+				}
+				&::before {
+					background: url(../../assets/images/testimonial/shape/01.png);
+					left: 0;
+				}
+				&::after {
+					background: url(../../assets/images/testimonial/shape/02.png);
+					right: 0;
+				}
+				.testimonial-thumb {
+					@extend %rel;
+					width: 100px;
+					height: 100px;
+					margin: 0 auto 30px;
+					border: 5px solid $theme-color-2;
+					@include border-radius(100%);
+					img {
+						@include border-radius(100%);
+					}
+					.quate {
+						width: 24px;
+						height: 24px;
+						line-height: 24px;
+						text-align: center;
+						font-size: 14px;
+						color: $white-color;
+						display: inline-block;
+						background: $theme-color-2;
+						top: 0;
+						right: 0;
+						@extend %abs;
+						@include border-radius(100%);
+						i {
+							margin-top: 5px;
+						}
+					}
+				}
+				.testimonial-content {
+					p {}
+					h6 {
+						span {
+							font-weight: 400;
+							font-size: 16px;
+						}
+					}
+					.ratings {
+						i {
+							@include margin(1px);
+							color: $star;
+						}
+					}
+				}
+			}
+		}
+		.testimonial-abs-thumb {
+			text-align: center;
+			display: none;
+			@include breakpoint(lg) {
+				padding-top: 60px;
+				display: block;
+			}
+		}
+	}
+}
