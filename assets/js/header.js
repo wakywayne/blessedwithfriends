@@ -127,7 +127,7 @@ Contact Us
         <div class="col-md-8 col-sm-6 col-xs-12">
             <p class="copyright-text">Trademark &#8482; 2024 All Rights Reserved by <br /> Daycare Company.
             <br /> Designed and Developed by <br />
-            <a href="https://wakywayne-blog.vercel.app/">Waynes World of Business and Security</a>.
+            <a href="https://wakywayne-blog.vercel.app/">Waynes World of Business and Security Solutions</a>.
           </p>
         </div>
       </div>
