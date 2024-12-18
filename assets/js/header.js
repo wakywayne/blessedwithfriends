@@ -21,22 +21,10 @@ $(document).ready(function() {
                   <a href="montesori.html">About/Montesori</a>
                 </li>
                 <li>
-                  <a href="spanish.html">Language</a>
-                </li>
-                <li>
                   <a href="sleep.html">Sleep Training</a>
                 </li>
                 <li>
                   <a href="gallery.html">Gallery</a>
-                </li>
-              <!--  <li>
-                  <a href="service.html">Service</a>
-                </li>
-                <li>
-                  <a href="blog.html">Blog</a>
-</li> -->
-                <li>
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdabM77pjO-wVs8AxZwveJst7DEGtV5gSXd2Zm88yne2CbA6A/viewform?usp=sf_link"target="_blank"target="_blank">Contact</a>
                 </li>
               </ul>
             </div>
@@ -63,32 +51,20 @@ Contact Us
 
   const html2 = `
   <div class="col-10 mx-auto mt-4">
-    <div class="row wrap row-wrap">
-      <div class="card col-12 col-md-4 pt-3" style="border: 2.5px solid #ffff00">
-        <a href="spanish.html">
-          <img src="https://picsum.photos/500/500" class="card-img-top" alt="Kids Learning Spanish">
-          <div class="card-body">
-            <h5 class="card-title">Learn Spanish</h5>
-            <p class="card-text">The easiest time for a child to learn a second language is while they are in the early
-              develpmental stages of their life. We take full advantage of this by having a spanish teacher come in to
-              our
-              daycare.</p>
-          </div>
-        </a>
-      </div>
-      <div class="card col-12 col-md-4 pt-3" style="border: 2.5px solid #54ccf8;">
+    <div class="row wrap row-wrap justify-content-center">
+      <div class="card col-12 col-md-4 pt-3 mx-2" style="background-color: #fff; border:1px solid #54ccf8;">
         <a href="montesori.html">
-          <img src="https://picsum.photos/500/500" class="card-img-top" alt="School">
+          <!-- <img src="https://picsum.photos/500/500" class="card-img-top" alt="School"> -->
           <div class="card-body">
-            <h5 class="card-title">Montesori Learning Style</h5>
+            <h5 class="card-title">What is Montessori?</h5>
             <p class="card-text">Discover the Montessori learning style and unlock your child's full potential with
               hands-on activities and personalized learning experiences.</p>
           </div>
         </a>
       </div>
-      <div class="card col-12 col-md-4 pt-3 " style="border: 2.5px solid #ccff99">
+      <div class="card col-12 col-md-4 pt-3  mx-2" style="background-color: #fff; border:1px solid #ccff99">
         <a href="sleep.html">
-          <img src="https://picsum.photos/500/500" class="card-img-top" alt="Infant Sleeping">
+          <!-- <img src="https://picsum.photos/500/500" class="card-img-top" alt="Infant Sleeping"> -->
           <div class="card-body">
             <h5 class="card-title">Sleep Training</h5>
             <p class="card-text">You don't have to worry about your kid forming habits that will keep you up at night
@@ -104,19 +80,21 @@ Contact Us
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-6">
-          <h6 class="readable">About</h6>
-          <p class="text-justify readable">
+          <h6>About</h6>
+          <p class="text-justify">
             Daycare Company is a daycare service that provides a safe and nurturing environment for children. We offer a
             variety of programs to meet the needs of children of all ages. Our goal is to provide a fun and educational
             experience for children while also giving parents peace of mind knowing that their child is in good hands.
           </p>
         </div>
         <div class="col-xs-12 col-md-6">
-          <h6 class="readable">Quick Links</h6>
+          <h6>Quick Links</h6>
           <ul class="footer-links">
-            <li class="readable"><a href="index.html">Home</a></li>
-            <li class="readable"><a href="montesori.html">About/Montesori</a></li>
-            <li class="readable"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdabM77pjO-wVs8AxZwveJst7DEGtV5gSXd2Zm88yne2CbA6A/viewform?usp=sf_link"target="_blank">Contact</a></li>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="montesori.html">About/Montesori</a></li>
+            <li><a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdabM77pjO-wVs8AxZwveJst7DEGtV5gSXd2Zm88yne2CbA6A/viewform?usp=sf_link"
+                target="_blank">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -125,7 +103,7 @@ Contact Us
     <div class="container">
       <div class="row py-1">
         <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Trademark &#8482; 2024 All Rights Reserved by <br /> Daycare Company.
+          <p class="copyright-text">Trademark &#8482; 2024 All Rights Reserved by <br /> Daycare Company.
             <br /> Designed and Developed by <br />
             <a href="https://wakywayne-blog.vercel.app/">Waynes World of Business and Security Solutions</a>.
           </p>
